@@ -25,6 +25,7 @@ const Login = () => {
 
         if (!data.username || !data.password) {
             alert("Please fill all mandatory paramters");
+            setLoading(false)
             return;
         }
 
