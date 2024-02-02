@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+"use client"
+
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -36,7 +38,7 @@ const Header = () => {
 
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fetchSession = async () => {
         try {
             const response = await fetch('/api/session');

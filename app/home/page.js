@@ -21,7 +21,7 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const router = useRouter();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fetchSession = async () => {
         try {
             const response = await fetch('/api/session');
