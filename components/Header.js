@@ -6,32 +6,50 @@ const Header = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    // Check user's login status and set the isLoggedIn state accordingly
-    const checkLoginStatus = async () => {
-      try {
-        const response = await fetch('/api/session', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+  // useEffect(() => {
+  //   // Check user's login status and set the isLoggedIn state accordingly
+  //   const checkLoginStatus = async () => {
+  //     try {
+  //       const response = await fetch('/api/session', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         },
         
   
-        });
+  //       });
 
-        if (response.status === 200) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
+  //       if (response.status === 200) {
+  //         setIsLoggedIn(true);
+  //       } else {
+  //         setIsLoggedIn(false);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error checking login status:', error);
+  //       setIsLoggedIn(false);
+  //     }
+  //   };
+
+  //   checkLoginStatus();
+  // }, []);
+
+
+
+
+  useEffect(() => {
+    const fetchSession = async () => {
+        try {
+            const response = await fetch('/api/session');
+            const data = await response.json();
+            
+            setIsLoggedIn(data.isLoggedIn);
+        } catch (error) {
+            console.error('Error fetching session:', error);
         }
-      } catch (error) {
-        console.error('Error checking login status:', error);
-        setIsLoggedIn(false);
-      }
     };
 
-    checkLoginStatus();
-  }, []);
+    fetchSession();
+}, []);
 
   const handleLogout = async () => {
     try {
@@ -89,7 +107,7 @@ const Header = () => {
                 Login
               </Link>
               <Link href="/register" className="mr-5 hover:text-gray-900">
-                SignUp
+                Signup
               </Link>
             </>
           )}

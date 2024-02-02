@@ -193,8 +193,8 @@ useEffect(() => {
   
   <select id="category" className="border rounded px-4 py-2">
     <option value="">All</option>
-    <option value="category2">Category 2</option>
-    <option value="category3">Category 3</option>
+    {/* <option value="category2">Category 2</option>
+    <option value="category3">Category 3</option> */}
   </select>
 </div>
 
