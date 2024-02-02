@@ -92,10 +92,8 @@ const Header = () => {
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           {isLoggedIn ? (
             <div>
-               <a href='/home' className="mr-5 hover:text-gray-900 cursor-pointer">
-              Home
-            </a>
-               <a onClick={handleLogout} className="mr-5 hover:text-gray-900 cursor-pointer">
+              
+            <a onClick={handleLogout} className="mr-5 hover:text-gray-900 cursor-pointer">
               Logout
             </a>
            
