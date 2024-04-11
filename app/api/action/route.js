@@ -12,7 +12,7 @@ export async function POST(request){
     
     
     try {
-        const database = client.db('stock');
+        const database = client.db('stock2');
         const inventory = database.collection('inventory');
      
         const filter = { slug: slug };

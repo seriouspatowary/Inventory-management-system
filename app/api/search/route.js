@@ -14,7 +14,7 @@ export async function GET(request){
 
 
   try {
-    const database = client.db('stock');
+    const database = client.db('stock2');
     const inventory = database.collection('inventory');
 
     

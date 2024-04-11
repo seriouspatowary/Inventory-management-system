@@ -8,13 +8,13 @@ export async function GET(request){
 
  
 // Replace the uri string with your connection string.
-const uri = 'mongodb+srv://Foodapp23:yRuaTaUny6m1SY6Z@cluster0.zlqfgvh.mongodb.net/stock?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://Foodapp23:yRuaTaUny6m1SY6Z@cluster0.zlqfgvh.mongodb.net/stock2?retryWrites=true&w=majority';
 
 const client = new MongoClient(uri);
 
 
   try {
-    const database = client.db('stock');
+    const database = client.db('stock2');
     const inventory = database.collection('inventory');
 
     
@@ -42,7 +42,7 @@ export async function POST(request){
     
     
       try {
-        const database = client.db('stock');
+        const database = client.db('stock2');
         const inventory = database.collection('inventory');
         const product = await inventory.insertOne(body);
     

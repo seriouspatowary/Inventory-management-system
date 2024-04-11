@@ -44,7 +44,7 @@ useEffect(() => {
 
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Fetch user session status when component mounts
     fetchProducts();
   }, []);

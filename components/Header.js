@@ -8,33 +8,6 @@ const Header = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // useEffect(() => {
-  //   // Check user's login status and set the isLoggedIn state accordingly
-  //   const checkLoginStatus = async () => {
-  //     try {
-  //       const response = await fetch('/api/session', {
-  //         method: 'GET',
-  //         headers: {
-  //           'Content-Type': 'application/json'
-  //         },
-        
-  
-  //       });
-
-  //       if (response.status === 200) {
-  //         setIsLoggedIn(true);
-  //       } else {
-  //         setIsLoggedIn(false);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error checking login status:', error);
-  //       setIsLoggedIn(false);
-  //     }
-  //   };
-
-  //   checkLoginStatus();
-  // }, []);
-
 
 
 
@@ -96,7 +69,10 @@ const Header = () => {
             <a onClick={handleLogout} className="mr-5 hover:text-gray-900 cursor-pointer">
               Logout
             </a>
-           
+             
+            <Link href="/home" className="mr-5 hover:text-gray-900">
+                Home
+              </Link>
            
             </div>
            

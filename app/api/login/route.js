@@ -23,7 +23,7 @@ export const POST = async (request) => {
         await client.connect();
 
         // Access the database and collection
-        const database = client.db('stock');
+        const database = client.db('stock2');
         const usersCollection = database.collection('users');
 
         // Find the user by username
